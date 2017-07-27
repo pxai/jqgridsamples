@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pop up window</title>
+</head>
+<body>
+<script>
+function closePopup () {
+	var newValue = document.getElementById("sample").value;
+	window.opener.document.getElementById("title").innerHTML = newValue;
+	window.opener.document.getElementById("sample").value = newValue;
+	self.close();
+}
+</script>
+<h1 id="title">This is the popup</h1>
+<input type="text" id="sample" value="" />
+<input type="button" onclick="closePopup()" value="close">
+</body>
+</html>
